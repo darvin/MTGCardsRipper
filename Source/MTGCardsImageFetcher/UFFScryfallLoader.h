@@ -7,7 +7,7 @@
 #include "UFFScryfallLoader.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class MTGCARDSIMAGEFETCHER_API UUFFScryfallLoader : public UActorComponent
 {
 	GENERATED_BODY()
@@ -23,6 +23,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
+	UFUNCTION(BlueprintCallable)
+			void Fetch();
 		
 };
